@@ -1,0 +1,3 @@
+[submodule "axilon_mirror_automation"]
+	path = axilon_mirror_automation
+	url = https://github.com/slaclab/axilon_mirror_automation.git
