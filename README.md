@@ -50,3 +50,15 @@ $ docker run -e USER=$USER --workdir /tests -v $CONFIG_PATH/:/tests -i pcdshub/a
 ```
 docker run --entrypoint /bin/bash -it pcdshub/axilon-mirror-automation:latest
 ```
+
+
+Rebuilding
+----------
+
+The latest image should be on dockerhub, but it can be rebuilt locally by doing the following:
+
+```
+$ git clone --recursive https://github.com/pcdshub/axilon_automation_docker
+$ cd axilon_automation_docker
+$ docker build -t pcdshub/axilon-mirror-automation:latest .
+```
