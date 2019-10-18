@@ -1,0 +1,5 @@
+# Ignore everything:
+*
+
+# whitelist only the submodule:
+!axilon_mirror_automation

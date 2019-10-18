@@ -7,14 +7,14 @@ WORKDIR /axilon
 # RUN git clone https://github.com/slaclab/axilon_mirror_automation.git device-uut
 COPY axilon_mirror_automation/ /axilon/device-uut/
 
-RUN cpan -f -i IPC::Run
-RUN cpan -f -i JSON
-RUN cpan -f -i Moose
-RUN cpan -f -i MooseX::Params::Validate
-RUN cpan -f -i namespace::autoclean
-RUN cpan -f -i Term::ProgressBar
-RUN cpan -f -i Class::MethodMaker
-RUN cpan -f -i Module::Runtime
+RUN cpan -T -f -i IPC::Run
+RUN cpan -T -f -i JSON
+RUN cpan -T -f -i Moose
+RUN cpan -T -f -i MooseX::Params::Validate
+RUN cpan -T -f -i namespace::autoclean
+RUN cpan -T -f -i Term::ProgressBar
+RUN cpan -T -f -i Class::MethodMaker
+RUN cpan -T -f -i Module::Runtime
 
 ENV PERL5LIB /axilon/device-uut/lib:perl5/lib/perl5/:perl5/lib/perl5/x86_64-linux-thread-multi
 
