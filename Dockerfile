@@ -16,7 +16,14 @@ RUN cpan -T -f -i Term::ProgressBar
 RUN cpan -T -f -i Class::MethodMaker
 RUN cpan -T -f -i Module::Runtime
 
-ENV PERL5LIB /axilon/device-uut/lib:perl5/lib/perl5/:perl5/lib/perl5/x86_64-linux-thread-multi
+ENV PERL5LIB /axilon/device-uut/lib:/usr/local/lib/perl5/lib/perl5/:/usr/local/lib/perl5/lib/perl5/x86_64-linux-thread-multi
+
+RUN wget https://epicsdeb.bnl.gov/debian/repo-key.pub && apt-key add repo-key.pub
+RUN cat /etc/apt/sources.list
+RUN echo 'deb https://epicsdeb.bnl.gov/debian/ buster/staging main contrib' >> /etc/apt/sources.list
+RUN echo 'deb-src https://epicsdeb.bnl.gov/debian/ buster/staging main contrib' >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -y epics-catools
 
 RUN perldoc device-uut/lib/Device/UUT.pm
 ENTRYPOINT ["perl", "/axilon/device-uut/bin/uut-pv" ]
