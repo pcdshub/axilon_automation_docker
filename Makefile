@@ -1,4 +1,4 @@
-VERSION=$(shell git describe --tags)
+VERSION=$(shell cd axilon_mirror_automation && git describe --always)
 
 all: image
 
